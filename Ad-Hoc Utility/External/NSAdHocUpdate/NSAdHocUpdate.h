@@ -1,6 +1,6 @@
 //
-//  AppDelegate.m
-//  Ad-Hoc Utility
+//  NSAdHocUpdate.h
+//  NSAdHocUpdate
 //
 //  The MIT License (MIT)
 //
@@ -25,17 +25,21 @@
 //  SOFTWARE.
 //
 
-#import "AppDelegate.h"
+#ifndef UIADHOCUPDATE_H
+#define UIADHOCUPDATE_H
 
-@interface AppDelegate ()
+#define kITMSServicesAction @"itms-services://?action=download-manifest&url="
+
+@import Cocoa;
+
+@interface NSAdHocUpdate : NSObject
+
++ (void)checkForUpdate:(NSURL *)manifestURL completionHandler:(void (^)(NSDictionary *manifest,
+                                                                        NSString *bundleId,
+                                                                        NSString *remoteVersion,
+                                                                        NSImage *image,
+                                                                        NSURL *payloadURL))completionHandler;
 
 @end
 
-@implementation AppDelegate
-
-- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
-{
-    return YES;
-}
-
-@end
+#endif

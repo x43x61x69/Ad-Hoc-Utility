@@ -14,6 +14,7 @@
 		421925DA1EBAF418001460A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421925D81EBAF418001460A1 /* Main.storyboard */; };
 		421925E51EBAF418001460A1 /* Ad_Hoc_UtilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 421925E41EBAF418001460A1 /* Ad_Hoc_UtilityTests.m */; };
 		421925F01EBAF418001460A1 /* Ad_Hoc_UtilityUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 421925EF1EBAF418001460A1 /* Ad_Hoc_UtilityUITests.m */; };
+		421926051EBB0CF2001460A1 /* NSAdHocUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 421926041EBB0CF2001460A1 /* NSAdHocUpdate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		421925EB1EBAF418001460A1 /* Ad-Hoc UtilityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ad-Hoc UtilityUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		421925EF1EBAF418001460A1 /* Ad_Hoc_UtilityUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ad_Hoc_UtilityUITests.m; sourceTree = "<group>"; };
 		421925F11EBAF418001460A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		421926031EBB0CF2001460A1 /* NSAdHocUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSAdHocUpdate.h; sourceTree = "<group>"; };
+		421926041EBB0CF2001460A1 /* NSAdHocUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAdHocUpdate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 		421925C11EBAF418001460A1 = {
 			isa = PBXGroup;
 			children = (
+				421925FD1EBAF465001460A1 /* External */,
 				421925CC1EBAF418001460A1 /* Ad-Hoc Utility */,
 				421925E31EBAF418001460A1 /* Ad-Hoc UtilityTests */,
 				421925EE1EBAF418001460A1 /* Ad-Hoc UtilityUITests */,
@@ -135,6 +139,24 @@
 				421925F11EBAF418001460A1 /* Info.plist */,
 			);
 			path = "Ad-Hoc UtilityUITests";
+			sourceTree = "<group>";
+		};
+		421925FD1EBAF465001460A1 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				421926021EBB0CF2001460A1 /* NSAdHocUpdate */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		421926021EBB0CF2001460A1 /* NSAdHocUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				421926031EBB0CF2001460A1 /* NSAdHocUpdate.h */,
+				421926041EBB0CF2001460A1 /* NSAdHocUpdate.m */,
+			);
+			name = NSAdHocUpdate;
+			path = "Ad-Hoc Utility/External/NSAdHocUpdate";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				421925D51EBAF418001460A1 /* ViewController.m in Sources */,
+				421926051EBB0CF2001460A1 /* NSAdHocUpdate.m in Sources */,
 				421925D21EBAF418001460A1 /* main.m in Sources */,
 				421925CF1EBAF418001460A1 /* AppDelegate.m in Sources */,
 			);
@@ -362,7 +385,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -404,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -414,12 +437,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 928652TY3Y;
 				INFOPLIST_FILE = "Ad-Hoc Utility/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "vg.vox.Ad-Hoc-Utility";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -427,12 +452,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 928652TY3Y;
 				INFOPLIST_FILE = "Ad-Hoc Utility/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "vg.vox.Ad-Hoc-Utility";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
